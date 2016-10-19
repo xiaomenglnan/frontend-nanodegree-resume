@@ -1,231 +1,171 @@
-/*
-This is empty on purpose! Your code to build the resume will go here.
- */
-/*var formattedName = HTMLheaderName.replace("%data%", "Meng");
-var formattedRole = HTMLheaderRole.replace("%data%", "Front-end developer");
-$("#header").prepend(formattedRole);
-$("#header").prepend(formattedName);*/
-
-var employee = {
-    "name": "meng nana",
-    "role": "Front-end Engineer"
-};
-var formattedName = HTMLheaderName.replace("%data%", employee.name);
-var formattedRole = HTMLheaderRole.replace("%data%", employee.role);
-$("#header").prepend(formattedRole);
-$("#header").prepend(formattedName);
-
-/*var formattedConnect = HTMLcontactGeneric.replace("%contact%", "contact");
-var formattedGeneric = formattedConnect.replace("%data%", "xiaomenglnan@126.com");
-var formattedMobile = HTMLmobile.replace("%data%", "13230316525");
-var formattedEmail = HTMLemail.replace("%data%", "xiaomenglnan@126.com");
-var formattedTwitter = HTMLtwitter.replace("%data%", "xiaomlingnan");
-var formattedGithub = HTMLgithub.replace("%data%", "xiaomenglnan");
-var formattedBlog = HTMLblog.replace("%data%", "xiaomenglnan.github.io");
-var formattedLocation = HTMLlocation.replace("%data%", "China");
-$("#topContacts").prepend(formattedGeneric);
-$("#topContacts").prepend(formattedMobile);
-$("#topContacts").prepend(formattedEmail);
-$("#footerContacts").prepend(formattedTwitter);
-$("#footerContacts").prepend(formattedGithub);
-$("#footerContacts").prepend(formattedBlog);
-$("#footerContacts").prepend(formattedLocation);*/
-
-/*var formattedPic = HTMLbioPic.replace("%data%", "images/selfy.jpg");
-var formattedWelcomeMsg = HTMLwelcomeMsg.replace("%data%", "Love and Life");
-$("#header").append(formattedPic);
-$("#header").append(formattedWelcomeMsg);
-
-var formattedSkills1 = HTMLskills.replace("%data%", "HTML");
-var formattedSkills2 = HTMLskills.replace("%data%", "Javascript");
-$("#header").append(HTMLskillsStart);
-$("#skills").append(formattedSkills1);
-$("#skills li:last").append(formattedSkills2);*/
 var bio = {
-    "src": "images/selfy.jpg",
-    "welcomeMsg": "Love and life",
-    contacts:{
-        "location":"Daqing,China",
-        "generic":"xiaomenglnan@126.com",
-        "mobile":"13230316525",
-        "twitter":"xiaomlingnan",
-        "github":"xiaomenglnan",
-        "blog":"xiaomenglnan.github.io",
-        "email":"xiaomenglnan@126.com"
+    "name": "Meng",
+    "role": "Front-end Developer",
+    "contacts": {
+        "mobile": "13230316525",
+        "email": "xiaomenglnan@126.com",
+        "github": "xiaomenglnan",
+        "twitter": "xiaomenglnan",
+        "location": "Daqing,China"
+    },
+    "welcomeMessage": "Love and life",
+    "skills": ["html", "css", "javascript", "jquery"],
+    "biopic": "images/selfy.jpg",
+    "display": function() {
+        var formattedName = HTMLheaderName.replace("%data%", bio.name);
+        var formattedRole = HTMLheaderRole.replace("%data%", bio.role);
+        var formattedMobile = HTMLmobile.replace("%data%", bio.contacts.mobile);
+        var formattedEmail = HTMLemail.replace("%data%", bio.contacts.email);
+        var formattedGithub = HTMLgithub.replace("%data%", bio.contacts.github);
+        var formattedTwitter = HTMLtwitter.replace("%data%", bio.contacts.twitter);
+        var formattedLocation = HTMLlocation.replace("%data%", bio.contacts.location);
+        var formattedWelcomeMessage = HTMLwelcomeMsg.replace("%data%", bio.welcomeMessage);
+        var formattedBioPic = HTMLbioPic.replace("%data%", bio.biopic);
+        $("#header").prepend(formattedRole);
+        $("#header").prepend(formattedName);
+        $("#topContacts").append(formattedMobile);
+        $("#topContacts").append(formattedEmail);
+        $("#topContacts").append(formattedGithub);
+        $("#topContacts").append(formattedTwitter);
+        $("#topContacts").append(formattedLocation);
+        $("#footerContacts").append(formattedMobile);
+        $("#footerContacts").append(formattedEmail);
+        $("#footerContacts").append(formattedGithub);
+        $("#footerContacts").append(formattedTwitter);
+        $("#footerContacts").append(formattedLocation);
+        $("#header").append(formattedBioPic);
+        $("#header").append(formattedWelcomeMessage);
+        $("#header").append(HTMLskillsStart);
+        bio.skills.forEach(function(skill) {
+            var formattedSkills = HTMLskills.replace("%data%", skill);
+            $("#skills").append(formattedSkills);
+        });
     }
 };
-formattedConnect = HTMLcontactGeneric.replace("%contact%", "contact");
-var formattedGeneric = formattedConnect.replace("%data%", bio.contacts.generic);
-var formattedMobile = HTMLmobile.replace("%data%", bio.contacts.mobile);
-var formattedEmail = HTMLemail.replace("%data%", bio.contacts.email);
-var formattedTwitter = HTMLtwitter.replace("%data%", bio.contacts.twitter);
-var formattedGithub = HTMLgithub.replace("%data%", bio.contacts.github);
-var formattedBlog = HTMLblog.replace("%data%",bio.contacts.blog );
-var formattedLocation = HTMLlocation.replace("%data%", bio.contacts.location);
-$("#topContacts").prepend(formattedGeneric);
-$("#topContacts").prepend(formattedMobile);
-$("#topContacts").prepend(formattedEmail);
-$("#footerContacts").prepend(formattedTwitter);
-$("#footerContacts").prepend(formattedGithub);
-$("#footerContacts").prepend(formattedBlog);
-$("#footerContacts").prepend(formattedLocation);
-var formattedPic = HTMLbioPic.replace("%data%", bio.src);
-var formattedWelcomeMsg = HTMLwelcomeMsg.replace("%data%", bio.welcomeMsg);
-$("#header").append(formattedPic);
-$("#header").append(formattedWelcomeMsg);
 
-/*var work = {
-    jobs: [{
-        "Employer": "Yuan",
-        "Title": "Intern",
-        "Date": "1",
-        "Location": "Daqing",
-        "Description": "Learning in a place near home"
-    }, {
-        "Employer": "Yuan",
-        "Title": "Intern",
-        "Date": "1",
-        "Location": "Daqing",
-        "Description": "Learning in a place near home"
-    }]
-};*/
-/*
-var formattedEmployer = HTMLworkEmployer.replace("%data%", work.Employer);
-var formattedTitle = HTMLworkTitle.replace("%data%", work.Title);
-var formattedPosition = formattedEmployer + formattedTitle;
-var formattedDates = HTMLworkDates.replace("%data%", work.Date);
-var formattedLocation = HTMLworkLocation.replace("%data%", work.Location);
-var formattedDescription = HTMLworkDescription.replace("%data%", work.Description);
-$("#workExperience").append(HTMLworkStart);
-$(".work-entry").append(formattedPosition);
-$(".work-entry").append(formattedDates);
-$(".work-entry").append(formattedLocation);
-$(".work-entry").append(formattedDescription);*/
+bio.display();
 
 var education = {
     "schools": [{
-        "degree": "Master",
-        "dates": "3",
-        "location": "Qinhuangdao",
-        "major": "Front-end"
-    }, {
+        "name": "Yanshan",
         "degree": "Bachelor",
-        "dates": "4",
         "location": "Qinhuangdao",
-        "major": "Front-end"
-    }]
+        "majors": ["Front-end Developer", "Blog developer"],
+        "dates": "2010 fall",
+        "url": "http://ysu.edu.cn/"
+    }, {
+        "name": "Kedong No.1 Middle School",
+        "degree": "Senior High",
+        "location": "Kedong,China",
+        "majors": ["English lover", "Family lover"],
+        "dates": "2007 fall",
+        "url": "http://KedongNo.1.com"
+    }],
+    "onlineCourses": [{
+        "title": "Sia",
+        "school": "Mushroommie",
+        "dates": "2016 summer",
+        "url": "http://xiaomenglnan.github.io"
+    }, {
+        "title": "Front-end developer",
+        "school": "Udacity",
+        "dates": "2016 fall",
+        "url": "https://classroom.udacity.com/nanodegrees/nd001/syllabus"
+    }],
+    "display": function() {
+        $("#education").append(HTMLschoolStart);
+        education.schools.forEach(function(school) {
+            var formattedSchoolName = HTMLschoolName.replace("%data%", school.name);
+            var formattedfSchoolDegree = HTMLschoolDegree.replace("%data%", school.degree);
+            var formattedSchoolDates = HTMLschoolDates.replace("%data%", school.dates);
+            var formattedLocation = HTMLschoolLocation.replace("%data%", school.location);
+            $(".education-entry").append(formattedSchoolName);
+            $(".education-entry").append(formattedfSchoolDegree);
+            $(".education-entry").append(formattedSchoolDates);
+            $(".education-entry").append(formattedLocation);
+            school.majors.forEach(function(major) {
+                var formattedMajor = HTMLschoolMajor.replace("%data%", major);
+                $(".education-entry").append(formattedMajor);
+            });
+        });
+        $(".education-entry").append(HTMLonlineClasses);
+        education.onlineCourses.forEach(function(onlineCourse) {
+            var formattedOnlineTitle = HTMLonlineTitle.replace("%data%", onlineCourse.title);
+            var formattedOnlineSchool = HTMLonlineSchool.replace("%data%", onlineCourse.school);
+            var formattedOnlineDates = HTMLonlineDates.replace("%data%", onlineCourse.dates);
+            var formattedOnlineURL = HTMLonlineURL.replace("%data%", onlineCourse.url);
+            $(".education-entry").append(formattedOnlineTitle);
+            $(".education-entry").append(formattedOnlineSchool);
+            $(".education-entry").append(formattedOnlineDates);
+            $(".education-entry").append(formattedOnlineURL);
+        });
+    }
 };
-/*var formattedSchoolName = HTMLschoolName.replace("%data%", education["school"]);
-var formattedSchoolDegree = HTMLschoolDegree.replace("%data%", education["degree"]);
-var formattedSchoolDates = HTMLschoolDates.replace("%data%", education["dates"]);
-var formattedSchoolLocation = HTMLschoolLocation.replace("%data%", education["location"]);
-var formattedSchoolMajor = HTMLschoolMajor.replace("%data%", education["Major"]);
-var formattedSchool = formattedSchoolName + formattedSchoolDegree;
-$("#education").append(HTMLschoolStart);
-$(".education-entry").append(formattedSchool);
-$(".education-entry").append(formattedSchoolDates);
-$(".education-entry").append(formattedSchoolLocation);
-$(".education-entry").append(formattedSchoolMajor);*/
 
-/*var displayWork = function() {
-    work.jobs.forEach(function(job) {
-        var formattedEmployer = HTMLworkEmployer.replace("%data%", job.Employer);
-        var formattedTitle = HTMLworkTitle.replace("%data%", job.Title);
-        var formattedPosition = formattedEmployer + formattedTitle;
-        var formattedDates = HTMLworkDates.replace("%data%", job.Date);
-        var formattedLocation = HTMLworkLocation.replace("%data%", job.Location);
-        var formattedDescription = HTMLworkDescription.replace("%data%", job.Description);
-        $("#workExperience").append(HTMLworkStart);
-        $(".work-entry:last").append(formattedPosition);
-        $(".work-entry:last").append(formattedDates);
-        $(".work-entry:last").append(formattedLocation);
-        $(".work-entry:last").append(formattedDescription);
-    });
-};
-
-displayWork();*/
-$(document).click(function(loc) {
-    // your code goes here
-    console.log("clientX=" + loc.clientX);
-    console.log("clientY=" + loc.clientY);
-});
+education.display();
 
 var work = {
     "jobs": [{
-        "employer": "Udacity",
-        "title": "Course Developer",
-        "location": "Mountain View, CA",
-        "dates": "Feb 2014 - Current",
-        "description": "Who moved my cheese cheesy feet cauliflower cheese. Queso taleggio when the cheese comes out everybody's happy airedale ricotta cheese and wine paneer camembert de normandie. Swiss mozzarella cheese slices feta fromage frais airedale swiss cheesecake. Hard cheese blue castello halloumi parmesan say cheese stinking bishop jarlsberg."
+        "employer": "Yuan",
+        "title": "Intern",
+        "location": "Daqing,China",
+        "dates": "2015 summer",
+        "description": "Coding pages and testing"
     }, {
-        "employer": "LearnBIG",
-        "title": "Software Engineer",
-        "location": "Seattle, WA",
-        "dates": "May 2013 - Jan 2014",
-        "description": "Who moved my cheese cheesy feet cauliflower cheese. Queso taleggio when the cheese comes out everybody's happy airedale ricotta cheese and wine paneer camembert de normandie. Swiss mozzarella cheese slices feta fromage frais airedale swiss cheesecake. Hard cheese blue castello halloumi parmesan say cheese stinking bishop jarlsberg."
+        "employer": "Yuan",
+        "title": "Intern",
+        "location": "Daqing,China",
+        "dates": "2016 summer",
+        "description": "Coding pages and testing"
+    }],
+    "display": function() {
+        $("#workExperience").append(HTMLworkStart);
+        work.jobs.forEach(function(job) {
+            var formattedWorkEmployer = HTMLworkEmployer.replace("%data%", job.employer);
+            var formattedWorkTitle = HTMLworkTitle.replace("%data%", job.title);
+            var formattedWorkDates = HTMLworkDates.replace("%data%", job.dates);
+            var formattedWorkLocation = HTMLworkLocation.replace("%data%", job.location);
+            var formattedWorkDescription = HTMLworkDescription.replace("%data%", job.description);
+            $(".work-entry").append(formattedWorkEmployer);
+            $(".work-entry").append(formattedWorkTitle);
+            $(".work-entry").append(formattedWorkDates);
+            $(".work-entry").append(formattedWorkLocation);
+            $(".work-entry").append(formattedWorkDescription);
+        });
+    }
+};
+
+work.display();
+
+var projects = {
+    "projects": [{
+        "title": "My blog in github",
+        "dates": "2016-08-10",
+        "description": "Record something I want to record",
+        "images": ["images/dog.jpg", "images/home.jpg"]
     }, {
-        "employer": "LEAD Academy Charter High School",
-        "title": "Science Teacher",
-        "location": "Nashville, TN",
-        "dates": "Jul 2012 - May 2013",
-        "description": "Who moved my cheese cheesy feet cauliflower cheese. Queso taleggio when the cheese comes out everybody's happy airedale ricotta cheese and wine paneer camembert de normandie. Swiss mozzarella cheese slices feta fromage frais airedale swiss cheesecake. Hard cheese blue castello halloumi parmesan say cheese stinking bishop jarlsberg."
-    }, {
-        "employer": "Stratford High School",
-        "title": "Science Teacher",
-        "location": "Nashville, TN",
-        "dates": "Jun 2009 - Jun 2012",
-        "description": "Who moved my cheese cheesy feet cauliflower cheese. Queso taleggio when the cheese comes out everybody's happy airedale ricotta cheese and wine paneer camembert de normandie. Swiss mozzarella cheese slices feta fromage frais airedale swiss cheesecake. Hard cheese blue castello halloumi parmesan say cheese stinking bishop jarlsberg."
-    }]
+        "title": "Visit with Chao to Xian",
+        "dates": "2016-07-23",
+        "description": "Visit my boyfriend's family",
+        "images": ["images/river.jpg", "images/tiger.jpg"]
+    }],
+    "display": function() {
+        $("#projects").append(HTMLprojectStart);
+        projects.projects.forEach(function(project) {
+            var formattedProjectTitle = HTMLprojectTitle.replace("%data%", project.title);
+            var formattedProjectDates = HTMLprojectDates.replace("%data%", project.dates);
+            var formattedProjectDescription = HTMLprojectDescription.replace("%data%", project.description);
+            $(".project-entry").append(formattedProjectTitle);
+            $(".project-entry").append(formattedProjectDates);
+            $(".project-entry").append(formattedProjectDescription);
+            project.images.forEach(function(image) {
+                var formattedProjectImage = HTMLprojectImage.replace("%data%", image);
+                $(".project-entry").append(formattedProjectImage);
+            });
+        });
+    }
 };
 
-// Your code goes here! Let me help you get started
-
-function locationizer(work_obj) {
-    var locationArray = [];
-    work_obj.jobs.forEach(function(job) {
-        locationArray.push(job.location);
-
-    });
-    return locationArray;
-};
-
-// Did locationizer() work? This line will tell you!
-console.log(locationizer(work));
-
-$("#main").append('<input type="button" value="internationalizeButton" onclick="inName(employee.name)">');
-
-function inName(oldName) {
-    var finalName = oldName;
-    // Your code goes here!
-    finalName = finalName.split(" ");
-
-    finalName[0] = finalName[0][0].toUpperCase() +
-        finalName[0].slice(1).toLowerCase();
-    finalName[1] = finalName[1].toUpperCase();
-    // Don't delete this line!
-    finalName = finalName.join(" ");
-    $("#name").text(finalName);
-};
-
-var project = {
-    "title": "blog",
-    "dates": "6 months",
-    "description": "something i want to record",
-    "image": "images/tiger.jpg"
-};
-
-project.display = function() {
-    $("#projects").append(HTMLprojectStart);
-    var formattedProjectTitle = HTMLprojectTitle.replace("%data%", project.title);
-    var formattedProjectDates = HTMLprojectDates.replace("%data%", project.dates);
-    var formattedProjectDescription = HTMLprojectDescription.replace("%data%", project.description);
-    var formattedProjectImage = HTMLprojectImage.replace("%data%", project.image);
-    $(".project-entry:last").append(formattedProjectTitle);
-    $(".project-entry:last").append(formattedProjectDates);
-    $(".project-entry:last").append(formattedProjectDescription);
-    $(".project-entry:last").append(formattedProjectImage);
-};
-
-project.display();
+projects.display();
 
 $("#mapDiv").append(googleMap);

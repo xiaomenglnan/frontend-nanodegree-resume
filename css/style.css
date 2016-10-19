@@ -14,6 +14,15 @@ h6 {
     font-family: "Roboto", sans-serif;
 }
 
+body * {
+    font-family: 'Shadows Into Light', cursive;
+}
+
+.project-images {
+    width: 600px;
+    height: 350px;
+}
+
 .clear-fix {
     overflow: auto;
 }
@@ -128,7 +137,7 @@ a {
 /* TODO: Replace with image later */
 
 #header {
-    background-color: #484848;
+    background-color: Silver;
 }
 
 .flex-box {
@@ -180,25 +189,27 @@ span {
 @media only screen and (max-width: 1024px) {
     #lets-connect {
         margin-top: 5%;
-    }
+    };
 }
 
 @media only screen and (max-width:900px) {
     .biopic {
         width: 175px;
-    }
+    };
 }
 
 @media only screen and (max-width: 750px) {
     #lets-connect {
         margin-top: 10%;
     }
+
     .biopic {
         width: 150px;
     }
+
     .welcome-message {
         display: none;
-    }
+    };
 }
 
 #map {
@@ -217,7 +228,5 @@ span {
     #skills-h3,
     .biopic {
         display: block;
-        width: 50px;
-        height: 100px;
-    }
+    };
 }
