@@ -1,3 +1,4 @@
+/*Define bio json object with biography information*/
 var bio = {
     "name": "Meng",
     "role": "Front-end Developer",
@@ -11,6 +12,8 @@ var bio = {
     "welcomeMessage": "Love and life",
     "skills": ["html", "css", "javascript", "jquery"],
     "biopic": "images/selfy.jpg",
+
+/*Define encapsulated function in bio object to display all the related information*/
     "display": function() {
         var formattedName = HTMLheaderName.replace("%data%", bio.name);
         var formattedRole = HTMLheaderRole.replace("%data%", bio.role);
@@ -43,8 +46,10 @@ var bio = {
     }
 };
 
+/*To do:display all the bio information*/
 bio.display();
 
+/*Define education json object with education information*/
 var education = {
     "schools": [{
         "name": "Yanshan",
@@ -72,6 +77,8 @@ var education = {
         "dates": "2016 fall",
         "url": "https://classroom.udacity.com/nanodegrees/nd001/syllabus"
     }],
+
+/*Define encapsulated function in education object to display all the related information*/
     "display": function() {
         $("#education").append(HTMLschoolStart);
         education.schools.forEach(function(school) {
@@ -102,8 +109,10 @@ var education = {
     }
 };
 
+/*To do:display all the education information*/
 education.display();
 
+/*Define work json object with work information*/
 var work = {
     "jobs": [{
         "employer": "Yuan",
@@ -118,6 +127,8 @@ var work = {
         "dates": "2016 summer",
         "description": "Coding pages and testing"
     }],
+
+/*Define encapsulated function in work object to display all the related information*/
     "display": function() {
         $("#workExperience").append(HTMLworkStart);
         work.jobs.forEach(function(job) {
@@ -135,8 +146,10 @@ var work = {
     }
 };
 
+/*To do:display all the work information*/
 work.display();
 
+/*Define projects json object with projects information*/
 var projects = {
     "projects": [{
         "title": "My blog in github",
@@ -149,6 +162,8 @@ var projects = {
         "description": "Visit my boyfriend's family",
         "images": ["images/river.jpg", "images/tiger.jpg"]
     }],
+
+/*Define encapsulated function in projects object to display all the related information*/
     "display": function() {
         $("#projects").append(HTMLprojectStart);
         projects.projects.forEach(function(project) {
@@ -166,6 +181,7 @@ var projects = {
     }
 };
 
+/*To do:display all the projects information*/
 projects.display();
 
 $("#mapDiv").append(googleMap);
